@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shoare Services — Central Victoria Builder</title>
+<meta name="description" content="Shannon Shoare. Certified builder, licensed surveyor, full trades coordination. Serving Central Victoria from Avenel for 15+ years. Pre-sale renovations, construction, surveying.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Roboto',sans-serif;background:#F5F2ED;color:#1C1610;line-height:1.6;overflow-x:hidden;}
+img{display:block;width:100%;}
+a{color:inherit;text-decoration:none;}
+:root{
+  --ink:#1C1610;--ink-mid:#4A3F30;--ink-light:#8C7D6A;
+  --paper:#F5F2ED;--paper-dark:#EAE5DC;--rule:#D4C9B5;
+  --gold:#B8864E;--gold-dark:#96683A;--white:#FFFFFF;
+  --max:1280px;--gap:8rem;
+}
+.container{max-width:var(--max);margin:0 auto;padding:0 3rem;}
+.eyebrow{font-family:'Roboto',sans-serif;font-size:0.64rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.2rem;}
+.rule-line{width:36px;height:2px;background:var(--gold);margin-bottom:2rem;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:2rem 3rem;transition:padding .3s,background .3s,border-bottom .3s;}
+nav.scrolled{padding:1.1rem 3rem;background:rgba(245,242,237,.97);border-bottom:1px solid var(--rule);}
+.nav-logo{font-family:'Roboto Slab',serif;font-size:1rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);transition:color .3s;}
+nav.scrolled .nav-logo{color:var(--ink);}
+.nav-links{display:flex;list-style:none;gap:2.8rem;align-items:center;}
+.nav-links a{font-size:.66rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.8);transition:color .2s;}
+nav.scrolled .nav-links a{color:var(--ink-mid);}
+.nav-links a:hover{color:var(--gold)!important;}
+.nav-cta-link{border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:2px;}
+nav.scrolled .nav-cta-link{border-bottom-color:var(--gold-dark);}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--white);transition:background .3s;}
+nav.scrolled .hamburger span{background:var(--ink);}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--paper);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-family:'Roboto Slab',serif;font-size:2rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);transition:color .2s;}
+.mobile-menu a:hover{color:var(--gold);}
+.mobile-close{position:absolute;top:2rem;right:3rem;font-size:.68rem;background:none;border:none;cursor:pointer;color:var(--ink-mid);letter-spacing:.12em;text-transform:uppercase;font-family:'Roboto',sans-serif;}
+
+/* HERO */
+#hero{position:relative;height:100vh;min-height:580px;overflow:hidden;background:var(--ink);}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;opacity:.7;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(28,22,16,.15) 0%,rgba(28,22,16,.6) 100%);}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 3rem 5.5rem;max-width:var(--max);margin:0 auto;}
+.hero-h1{font-family:'Roboto Slab',serif;font-size:clamp(3rem,6vw,6.5rem);font-weight:900;color:var(--white);text-transform:uppercase;letter-spacing:.04em;line-height:.98;margin-bottom:2rem;}
+.hero-h1 em{font-style:normal;color:var(--gold);}
+.hero-meta{display:flex;gap:3rem;align-items:flex-end;flex-wrap:wrap;}
+.hero-desc{font-size:.76rem;color:rgba(255,255,255,.65);letter-spacing:.1em;text-transform:uppercase;font-weight:300;line-height:2;max-width:300px;}
+.hero-cta{display:inline-block;background:var(--gold);color:var(--ink);font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;padding:1rem 2.5rem;transition:background .2s;white-space:nowrap;}
+.hero-cta:hover{background:var(--gold-dark);}
+.hero-scroll-line{position:absolute;bottom:0;left:3rem;width:1px;height:80px;background:rgba(255,255,255,.15);overflow:hidden;}
+.hero-scroll-line::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:var(--gold);animation:sl 2s ease-in-out infinite;}
+@keyframes sl{to{top:100%;}}
+
+/* INTRO BAND */
+#intro{background:var(--ink);padding:0;}
+.intro-inner{display:flex;align-items:stretch;border-top:1px solid rgba(255,255,255,.06);}
+.intro-stat{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3.5rem 2rem;border-right:1px solid rgba(255,255,255,.06);}
+.intro-stat:last-of-type{border-right:none;}
+.intro-num{font-family:'Roboto Slab',serif;font-size:2.6rem;font-weight:900;color:var(--gold);line-height:1;margin-bottom:.4rem;}
+.intro-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);font-weight:300;}
+.intro-statement{flex:3;padding:3.5rem 3rem;border-left:1px solid rgba(255,255,255,.06);}
+.intro-statement p{font-family:'Roboto Slab',serif;font-size:clamp(.9rem,1.6vw,1.25rem);font-weight:300;color:rgba(255,255,255,.65);line-height:1.6;letter-spacing:.01em;}
+.intro-statement strong{color:var(--white);font-weight:700;}
+
+/* ABOUT */
+#about{padding:var(--gap) 0;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center;}
+.about-img-wrap{position:relative;}
+.about-img-main{aspect-ratio:3/4;overflow:hidden;}
+.about-img-main img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.about-img-accent{position:absolute;bottom:-3rem;right:-3rem;width:52%;aspect-ratio:3/2;overflow:hidden;border:8px solid var(--paper);}
+.about-img-accent img{width:100%;height:100%;object-fit:cover;}
+.about-text h2{font-family:'Roboto Slab',serif;font-size:clamp(2rem,3vw,3.2rem);font-weight:900;text-transform:uppercase;letter-spacing:.04em;line-height:1.05;margin-bottom:2rem;}
+.about-text h2 em{font-style:normal;color:var(--gold);}
+.about-text p{font-size:.93rem;color:var(--ink-mid);font-weight:300;margin-bottom:1.2rem;line-height:1.85;}
+.cert-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--rule);}
+.cert{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mid);font-weight:500;padding:.45rem 1rem;border:1px solid var(--rule);background:var(--paper-dark);}
+
+/* SERVICES */
+#services{background:var(--ink);padding:var(--gap) 0;}
+.services-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-bottom:5rem;padding-bottom:4rem;border-bottom:1px solid rgba(255,255,255,.07);}
+.services-header h2{font-family:'Roboto Slab',serif;font-size:clamp(2rem,3.5vw,3.5rem);font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:var(--white);line-height:1.02;}
+.services-header h2 em{font-style:normal;color:var(--gold);}
+.services-header p{font-size:.88rem;color:rgba(255,255,255,.42);font-weight:300;line-height:1.85;align-self:end;max-width:400px;}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);}
+.svc{background:var(--ink);padding:3rem 2.5rem;border-top:2px solid transparent;transition:background .2s,border-top-color .2s;}
+.svc:hover{background:rgba(255,255,255,.025);border-top-color:var(--gold);}
+.svc-num{font-size:.6rem;letter-spacing:.2em;color:var(--gold);font-weight:500;display:block;margin-bottom:1.8rem;}
+.svc h3{font-family:'Roboto Slab',serif;font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--white);margin-bottom:1rem;}
+.svc p{font-size:.8rem;color:rgba(255,255,255,.42);font-weight:300;line-height:1.8;}
+.svc ul{margin-top:1.2rem;list-style:none;}
+.svc ul li{font-size:.72rem;color:rgba(255,255,255,.28);padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-weight:300;letter-spacing:.03em;}
+.svc ul li:last-child{border-bottom:none;}
+
+/* PROJECTS */
+#projects{padding:var(--gap) 0;}
+.projects-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem;}
+.projects-header h2{font-family:'Roboto Slab',serif;font-size:clamp(2rem,3vw,3rem);font-weight:900;text-transform:uppercase;letter-spacing:.04em;line-height:1.05;}
+.projects-note{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);text-align:right;line-height:1.7;max-width:200px;}
+.projects-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:310px 310px;gap:3px;}
+.proj{position:relative;overflow:hidden;background:var(--paper-dark);}
+.proj.tall{grid-row:span 2;}
+.proj img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.proj:hover img{transform:scale(1.04);}
+.proj-label{position:absolute;bottom:0;left:0;right:0;padding:2.5rem 1.5rem 1.5rem;background:linear-gradient(transparent,rgba(28,22,16,.88));opacity:0;transition:opacity .3s;}
+.proj:hover .proj-label{opacity:1;}
+.proj-cat{display:block;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem;}
+.proj-name{font-family:'Roboto Slab',serif;font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);}
+
+/* PROCESS */
+#process{background:var(--paper-dark);padding:var(--gap) 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.process-header{margin-bottom:5rem;}
+.process-header h2{font-family:'Roboto Slab',serif;font-size:clamp(2rem,3vw,3rem);font-weight:900;text-transform:uppercase;letter-spacing:.04em;line-height:1.08;max-width:480px;}
+.process-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;background:var(--rule);}
+.proc{background:var(--paper-dark);padding:2.5rem 2rem;}
+.proc-step{font-size:.58rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;font-weight:500;display:block;margin-bottom:.8rem;}
+.proc-title{font-family:'Roboto Slab',serif;font-size:.95rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);display:block;margin-bottom:1rem;}
+.proc p{font-size:.76rem;color:var(--ink-mid);font-weight:300;line-height:1.75;}
+
+/* PARTNERS */
+#partners{padding:6rem 0;background:var(--paper);}
+.partners-header{text-align:center;margin-bottom:3.5rem;}
+.partners-header h2{font-family:'Roboto Slab',serif;font-size:1.3rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em;}
+.partners-row{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;}
+.partner-card{background:var(--white);border:1px solid var(--rule);padding:2.2rem 2.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;min-width:210px;flex:1;max-width:270px;transition:border-color .2s,box-shadow .2s;}
+.partner-card:hover{border-color:var(--gold);box-shadow:0 4px 24px rgba(184,134,78,.1);}
+.plogo{height:52px;display:flex;align-items:center;justify-content:center;width:100%;}
+/* Ray White — yellow diamond + wordmark */
+.rw-wrap{display:flex;flex-direction:column;align-items:center;gap:4px;}
+.rw-diamond{width:28px;height:28px;background:#FFD700;transform:rotate(45deg);}
+.rw-word{font-family:'Roboto',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.08em;color:#1a1a1a;text-transform:uppercase;}
+/* Puppa & Gaehl */
+.pg-word{font-family:'Roboto Slab',serif;font-size:.75rem;font-weight:700;letter-spacing:.05em;color:#1D4E8A;text-align:center;text-transform:uppercase;line-height:1.4;}
+/* Janelle Puppa */
+.jp-word{font-family:'Roboto',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.06em;color:#8B1818;text-align:center;text-transform:uppercase;line-height:1.4;}
+.p-agent{font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);text-align:center;}
+.p-loc{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);}
+
+/* TESTIMONIALS */
+#testimonials{background:var(--ink);padding:var(--gap) 0;}
+#testimonials .eyebrow{color:var(--gold);}
+#testimonials h2{font-family:'Roboto Slab',serif;font-size:clamp(1.8rem,2.8vw,2.8rem);font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:var(--white);margin-bottom:4rem;line-height:1.08;max-width:460px;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);}
+.testi{background:var(--ink);padding:3rem 2.5rem;}
+.testi-q{font-family:'Roboto Slab',serif;font-size:2.8rem;color:var(--gold);line-height:.8;margin-bottom:1.5rem;opacity:.55;}
+.testi-text{font-size:.86rem;color:rgba(255,255,255,.55);font-weight:300;line-height:1.9;font-style:italic;margin-bottom:2rem;}
+.testi-name{font-family:'Roboto Slab',serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white);}
+.testi-role{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:.3rem;}
+
+/* COVERAGE */
+#coverage{padding:var(--gap) 0;background:var(--paper);}
+.coverage-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:7rem;align-items:center;}
+.coverage-text h2{font-family:'Roboto Slab',serif;font-size:clamp(2rem,3vw,3rem);font-weight:900;text-transform:uppercase;letter-spacing:.04em;line-height:1.08;margin-bottom:1.5rem;}
+.coverage-text h2 em{font-style:normal;color:var(--gold);}
+.coverage-text p{font-size:.9rem;color:var(--ink-mid);font-weight:300;line-height:1.85;margin-bottom:1rem;}
+.town-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem;}
+.town{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mid);padding:.42rem .9rem;border:1px solid var(--rule);font-weight:500;}
+.town.home{background:var(--gold);color:var(--ink);border-color:var(--gold);}
+.map-wrap{border:1px solid var(--rule);background:var(--white);padding:1.8rem;}
+.map-svg{width:100%;height:auto;display:block;}
+
+/* CONTACT */
+#contact{background:var(--paper-dark);padding:var(--gap) 0;border-top:1px solid var(--rule);}
+.contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:8rem;align-items:start;}
+.contact-info h2{font-family:'Roboto Slab',serif;font-size:clamp(2rem,3vw,3rem);font-weight:900;text-transform:uppercase;letter-spacing:.04em;line-height:1.08;margin-bottom:1.5rem;}
+.contact-info h2 em{font-style:normal;color:var(--gold);}
+.contact-info>p{font-size:.88rem;color:var(--ink-mid);font-weight:300;line-height:1.85;margin-bottom:3rem;}
+.cd-list{display:flex;flex-direction:column;}
+.cd-row{display:flex;gap:1.5rem;align-items:flex-start;padding:1.3rem 0;border-bottom:1px solid var(--rule);}
+.cd-row:first-child{border-top:1px solid var(--rule);}
+.cd-lbl{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;min-width:58px;padding-top:2px;}
+.cd-val{font-family:'Roboto Slab',serif;font-size:.88rem;color:var(--ink);}
+.cd-val a{color:var(--ink);transition:color .2s;}
+.cd-val a:hover{color:var(--gold);}
+/* form */
+.form-eyebrow{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;display:block;margin-bottom:.8rem;}
+.form-title{font-family:'Roboto Slab',serif;font-size:1.6rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;}
+.form-sub{font-size:.8rem;color:var(--ink-light);margin-bottom:2.5rem;font-weight:300;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.fg{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1rem;}
+.fg label{font-size:.58rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mid);}
+.fg input,.fg select,.fg textarea{background:var(--white);border:1px solid var(--rule);border-bottom:2px solid var(--rule);padding:.85rem 1rem;font-family:'Roboto',sans-serif;font-size:.87rem;color:var(--ink);outline:none;width:100%;appearance:none;transition:border-bottom-color .2s;border-radius:0;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-bottom-color:var(--gold);}
+.fg textarea{resize:vertical;min-height:130px;}
+.fg select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238C7D6A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;cursor:pointer;}
+.form-btn{width:100%;background:var(--ink);color:var(--white);border:none;padding:1.1rem;font-family:'Roboto',sans-serif;font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .2s;margin-top:.5rem;border-radius:0;}
+.form-btn:hover{background:var(--gold);color:var(--ink);}
+.form-btn:disabled{opacity:.5;cursor:not-allowed;}
+.form-msg{display:none;margin-top:1rem;padding:1rem;font-size:.82rem;font-weight:300;line-height:1.6;}
+.form-msg.success{display:block;background:#EDF3E8;color:#2F6020;border-left:3px solid #529B3A;}
+.form-msg.error{display:block;background:#F5EAEA;color:#8B2020;border-left:3px solid #B84040;}
+
+/* FOOTER */
+footer{background:var(--ink);padding:4rem 0 2.5rem;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;margin-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.06);}
+.footer-name{font-family:'Roboto Slab',serif;font-size:1.3rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--white);margin-bottom:1rem;}
+.footer-name span{color:var(--gold);}
+.footer-brand p{font-size:.8rem;color:rgba(255,255,255,.32);font-weight:300;line-height:1.75;max-width:290px;}
+.footer-col h4{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28);font-weight:500;margin-bottom:1.5rem;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:.75rem;}
+.footer-col ul li a{font-size:.8rem;color:rgba(255,255,255,.45);font-weight:300;transition:color .2s;}
+.footer-col ul li a:hover{color:var(--gold);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:.62rem;letter-spacing:.08em;color:rgba(255,255,255,.18);text-transform:uppercase;}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease;}
+.reveal.visible{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.12s;}
+.reveal-delay-2{transition-delay:.24s;}
+.reveal-delay-3{transition-delay:.36s;}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .svc-grid{grid-template-columns:repeat(2,1fr);}
+  .process-grid{grid-template-columns:repeat(3,1fr);}
+  .coverage-grid{grid-template-columns:1fr;gap:4rem;}
+  .intro-statement{border-left:none;padding-left:0;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06);}
+  .intro-inner{flex-wrap:wrap;}
+}
+@media(max-width:900px){
+  :root{--gap:5rem;}
+  .container{padding:0 1.8rem;}
+  nav{padding:1.4rem 1.8rem;}
+  nav.scrolled{padding:1rem 1.8rem;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .hero-content{padding:0 1.8rem 4rem;}
+  .about-grid{grid-template-columns:1fr;gap:5rem;}
+  .about-img-accent{right:-1rem;}
+  .services-header{grid-template-columns:1fr;gap:1.5rem;}
+  .svc-grid{grid-template-columns:1fr;}
+  .projects-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .proj.tall{grid-row:span 1;}
+  .projects-header{flex-direction:column;align-items:flex-start;gap:.5rem;}
+  .projects-note{text-align:left;max-width:none;}
+  .partners-row{flex-direction:column;align-items:center;}
+  .testi-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;gap:4rem;}
+  .form-row{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;gap:2.5rem;}
+  .footer-bottom{flex-direction:column;gap:.5rem;text-align:center;}
+}
+@media(max-width:560px){
+  .container{padding:0 1.2rem;}
+  .process-grid{grid-template-columns:repeat(2,1fr);}
+  .projects-grid{grid-template-columns:1fr;}
+  .hero-meta{flex-direction:column;align-items:flex-start;gap:1.5rem;}
+  .intro-inner{flex-direction:column;}
+  .intro-stat{width:100%;border-right:none;border-bottom:1px solid rgba(255,255,255,.06);}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Shoare Services</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact" class="nav-cta-link">Book a Quote</a></li>
+  </ul>
+  <button class="hamburger" onclick="openMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMenu()">Close ✕</button>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#projects" onclick="closeMenu()">Projects</a>
+  <a href="#process" onclick="closeMenu()">Process</a>
+  <a href="#contact" onclick="closeMenu()">Book a Quote</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <img class="hero-img" src="images/hero.png" alt="Shannon Shoare on site at golden hour, Central Victoria">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-h1">Full trades.<br><em>One call.</em></h1>
+    <div class="hero-meta">
+      <p class="hero-desc">Certified builder &amp; licensed surveyor<br>Avenel, Central Victoria<br>Serving agents &amp; homeowners 15+ years</p>
+      <a href="#contact" class="hero-cta">Book a Free Quote</a>
+    </div>
+  </div>
+  <div class="hero-scroll-line"></div>
+</section>
+
+<!-- INTRO BAND -->
+<section id="intro">
+  <div class="container">
+    <div class="intro-inner">
+      <div class="intro-stat">
+        <span class="intro-num">15+</span>
+        <span class="intro-label">Years Operating</span>
+      </div>
+      <div class="intro-stat">
+        <span class="intro-num">60%</span>
+        <span class="intro-label">Agent Referrals</span>
+      </div>
+      <div class="intro-stat">
+        <span class="intro-num">50km</span>
+        <span class="intro-label">Service Radius</span>
+      </div>
+      <div class="intro-statement">
+        <p>Shannon Shoare is <strong>Central Victoria's go-to trades coordinator</strong> — a VBA-registered builder, licensed surveyor and the single point of contact who brings the right tradespeople to every job, every time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <div class="about-img-main">
+          <img src="images/about-portrait.png" alt="Shannon Shoare, builder and licensed surveyor, Central Victoria">
+        </div>
+        <div class="about-img-accent">
+          <img src="images/about-hands.png" alt="Precision trade work — marking timber on site">
+        </div>
+      </div>
+      <div class="about-text reveal reveal-delay-2">
+        <span class="eyebrow">About Shannon</span>
+        <div class="rule-line"></div>
+        <h2>The builder<br>agents <em>trust</em></h2>
+        <p>Shannon Shoare has been building and renovating across Central Victoria for over 15 years, operating from his base in Avenel. Working closely with local real estate agents, Shannon has become the contractor you call when a property needs to be market-ready — fast, done properly, and with no drama.</p>
+        <p>What sets Shannon apart is breadth. He holds a surveying qualification and operates professional-grade survey equipment — rare in regional Victoria. He also coordinates a trusted network of tradespeople, meaning painting, tiling, cabinetry, flooring, fencing and more can all be managed under one contract.</p>
+        <p>Whether it's a pre-sale refresh for a Seymour agent or a structural build on an Avenel rural property, Shannon brings the same quality and the same direct communication to every job.</p>
+        <div class="cert-row">
+          <span class="cert">VBA Registered Builder</span>
+          <span class="cert">Licensed Surveyor</span>
+          <span class="cert">Fully Insured</span>
+          <span class="cert">15+ Years Experience</span>
+          <span class="cert">Central Victoria</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <div>
+        <span class="eyebrow">What We Do</span>
+        <h2>Every trade.<br><em>One number.</em></h2>
+      </div>
+      <p>From a single room refresh to a full project-managed renovation — Shoare Services coordinates the right people for every scope of work across Central Victoria.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <span class="svc-num">01</span>
+        <h3>Pre-Sale Renovations</h3>
+        <p>Preparing properties for market is the core of what we do. Working with real estate agents to maximise sale results, on time and on budget.</p>
+        <ul>
+          <li>Interior &amp; exterior cosmetic refresh</li>
+          <li>Kitchen &amp; bathroom updates</li>
+          <li>Painting, patching &amp; presentation</li>
+          <li>Staging-ready finishes</li>
+        </ul>
+      </div>
+      <div class="svc reveal reveal-delay-1">
+        <span class="svc-num">02</span>
+        <h3>Cabinetry &amp; Joinery</h3>
+        <p>Installation, repair and refinishing of kitchen cabinetry, laundry joinery and built-in storage — including 2-pack cabinet painting.</p>
+        <ul>
+          <li>Cabinet installation &amp; repair</li>
+          <li>2-pack &amp; brush painting</li>
+          <li>Benchtops &amp; splashbacks</li>
+          <li>Built-in storage &amp; wardrobes</li>
+        </ul>
+      </div>
+      <div class="svc reveal reveal-delay-2">
+        <span class="svc-num">03</span>
+        <h3>Painting &amp; Plastering</h3>
+        <p>Interior and exterior painting, plasterboard repairs and texture work. Trade-quality finishes — not just a quick coat.</p>
+        <ul>
+          <li>Interior walls, ceilings &amp; trim</li>
+          <li>Exterior weatherboard &amp; render</li>
+          <li>Plasterboard repairs</li>
+          <li>Texture &amp; render coatings</li>
+        </ul>
+      </div>
+      <div class="svc reveal">
+        <span class="svc-num">04</span>
+        <h3>Flooring &amp; Tiling</h3>
+        <p>Supply and installation of timber, laminate, vinyl plank and tile — kitchens, bathrooms, living areas and outdoor spaces.</p>
+        <ul>
+          <li>Timber &amp; laminate flooring</li>
+          <li>Vinyl plank installation</li>
+          <li>Floor &amp; wall tiling</li>
+          <li>Regrouting &amp; silicone sealing</li>
+        </ul>
+      </div>
+      <div class="svc reveal reveal-delay-1">
+        <span class="svc-num">05</span>
+        <h3>Decking &amp; Fencing</h3>
+        <p>Hardwood and composite decking, rural and residential fencing, outdoor structures built for Central Victorian conditions.</p>
+        <ul>
+          <li>Hardwood &amp; composite decking</li>
+          <li>Colorbond &amp; timber fencing</li>
+          <li>Pergolas &amp; carports</li>
+          <li>Retaining walls &amp; gates</li>
+        </ul>
+      </div>
+      <div class="svc reveal reveal-delay-2">
+        <span class="svc-num">06</span>
+        <h3>Surveying</h3>
+        <p>Shannon holds a surveying qualification and operates professional-grade equipment — boundary, setout, contour and subdivision surveys all handled in-house.</p>
+        <ul>
+          <li>Boundary &amp; title re-establishment</li>
+          <li>Site setout &amp; contour surveys</li>
+          <li>Subdivision support</li>
+          <li>Fencing &amp; building setout</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="projects-header reveal">
+      <div>
+        <span class="eyebrow">Past Projects</span>
+        <h2>Work that speaks<br>for itself</h2>
+      </div>
+      <p class="projects-note">Add your own project photos to replace these</p>
+    </div>
+    <div class="projects-grid">
+      <div class="proj tall reveal">
+        <img src="images/gallery-renovation.png" alt="Open plan renovation interior — pre-sale ready">
+        <div class="proj-label">
+          <span class="proj-cat">Pre-Sale Renovation</span>
+          <span class="proj-name">Seymour Residence</span>
+        </div>
+      </div>
+      <div class="proj reveal reveal-delay-1">
+        <img src="images/gallery-kitchen.png" alt="Farmhouse kitchen renovation with brass hardware">
+        <div class="proj-label">
+          <span class="proj-cat">Kitchen Renovation</span>
+          <span class="proj-name">Nagambie Residence</span>
+        </div>
+      </div>
+      <div class="proj reveal reveal-delay-2">
+        <img src="images/gallery-decking.png" alt="Hardwood timber deck with Australian native garden">
+        <div class="proj-label">
+          <span class="proj-cat">Outdoor Decking</span>
+          <span class="proj-name">Avenel Property</span>
+        </div>
+      </div>
+      <div class="proj reveal reveal-delay-1">
+        <img src="images/gallery-bathroom.png" alt="Bathroom renovation with freestanding bath">
+        <div class="proj-label">
+          <span class="proj-cat">Bathroom Remodel</span>
+          <span class="proj-name">Euroa Residence</span>
+        </div>
+      </div>
+      <div class="proj reveal reveal-delay-2">
+        <img src="images/gallery-exterior.png" alt="Freshly painted weatherboard exterior">
+        <div class="proj-label">
+          <span class="proj-cat">Exterior Painting</span>
+          <span class="proj-name">Seymour Pre-Sale</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="process-header reveal">
+      <span class="eyebrow">How It Works</span>
+      <div class="rule-line"></div>
+      <h2>Simple from<br>start to finish</h2>
+    </div>
+    <div class="process-grid">
+      <div class="proc reveal">
+        <span class="proc-step">Step 01</span>
+        <span class="proc-title">Enquire</span>
+        <p>Call, email or fill in the form. Tell us the property address, what needs doing and your timeline.</p>
+      </div>
+      <div class="proc reveal reveal-delay-1">
+        <span class="proc-step">Step 02</span>
+        <span class="proc-title">Site Visit</span>
+        <p>Shannon visits the property, assesses scope and condition first-hand — and surveys where needed.</p>
+      </div>
+      <div class="proc reveal reveal-delay-2">
+        <span class="proc-step">Step 03</span>
+        <span class="proc-title">Quote</span>
+        <p>A clear, itemised quote with a realistic timeline. No hidden costs, no vague estimates.</p>
+      </div>
+      <div class="proc reveal">
+        <span class="proc-step">Step 04</span>
+        <span class="proc-title">Schedule</span>
+        <p>Shannon coordinates all trades and locks in the schedule. One person to call throughout.</p>
+      </div>
+      <div class="proc reveal reveal-delay-1">
+        <span class="proc-step">Step 05</span>
+        <span class="proc-title">Build</span>
+        <p>Work carried out to specification. Shannon is on the tools and on site — not managing from a desk.</p>
+      </div>
+      <div class="proc reveal reveal-delay-2">
+        <span class="proc-step">Step 06</span>
+        <span class="proc-title">Handover</span>
+        <p>Final walkthrough, sign-off and handover. Property is clean, finished and ready — on time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="container">
+    <div class="partners-header reveal">
+      <span class="eyebrow">Trusted By</span>
+      <h2>Our Real Estate Partners</h2>
+    </div>
+    <div class="partners-row">
+      <div class="partner-card reveal">
+        <div class="plogo">
+          <div class="rw-wrap">
+            <div class="rw-diamond"></div>
+            <span class="rw-word">Ray White</span>
+          </div>
+        </div>
+        <p class="p-agent">Mark Boyer — Principal</p>
+        <p class="p-loc">Nagambie</p>
+      </div>
+      <div class="partner-card reveal reveal-delay-1">
+        <div class="plogo">
+          <div class="pg-word">Puppa &amp; Gaehl<br>Real Estate</div>
+        </div>
+        <p class="p-agent">Bonnie Gaehl — Principal</p>
+        <p class="p-loc">Nagambie &amp; Avenel</p>
+      </div>
+      <div class="partner-card reveal reveal-delay-2">
+        <div class="plogo">
+          <div class="jp-word">Janelle Puppa<br>Real Estate</div>
+        </div>
+        <p class="p-agent">Janelle Puppa — Principal</p>
+        <p class="p-loc">Seymour</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <span class="eyebrow reveal">What They Say</span>
+    <h2 class="reveal">Trusted by agents<br>and homeowners alike</h2>
+    <div class="testi-grid">
+      <div class="testi reveal">
+        <div class="testi-q">"</div>
+        <p class="testi-text">Shannon is our first call when a vendor needs work done before listing. He's turned around full renovations in under three weeks — on budget, with no complaints from vendors or buyers. The reliability is what keeps us coming back.</p>
+        <p class="testi-name">Mark Boyer</p>
+        <p class="testi-role">Principal — Ray White Nagambie</p>
+      </div>
+      <div class="testi reveal reveal-delay-1">
+        <div class="testi-q">"</div>
+        <p class="testi-text">We've used Shannon across multiple pre-sale jobs in Avenel and Nagambie. He understands what buyers notice and what they don't — which means vendors spend money in the right places. Honest, qualified and always on time.</p>
+        <p class="testi-name">Bonnie Gaehl</p>
+        <p class="testi-role">Principal — Puppa &amp; Gaehl Real Estate</p>
+      </div>
+      <div class="testi reveal reveal-delay-2">
+        <div class="testi-q">"</div>
+        <p class="testi-text">What I value most is having one person to call. Shannon coordinates everything — painting, flooring, the kitchen — and I don't have to chase five different contractors. Properties come back ready to photograph and list.</p>
+        <p class="testi-name">Janelle Puppa</p>
+        <p class="testi-role">Principal — Janelle Puppa Real Estate, Seymour</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE MAP -->
+<section id="coverage">
+  <div class="container">
+    <div class="coverage-grid">
+      <div class="coverage-text reveal">
+        <span class="eyebrow">Service Area</span>
+        <div class="rule-line"></div>
+        <h2>Based in Avenel.<br><em>50km radius.</em></h2>
+        <p>Shoare Services operates across Central Victoria, covering towns and rural properties within approximately 50 kilometres of Avenel.</p>
+        <p>If you're unsure whether we cover your property, just call. Shannon regularly works across the Mitchell, Strathbogie and Greater Shepparton council areas.</p>
+        <div class="town-tags">
+          <span class="town home">★ Avenel</span>
+          <span class="town">Seymour</span>
+          <span class="town">Nagambie</span>
+          <span class="town">Euroa</span>
+          <span class="town">Benalla</span>
+          <span class="town">Shepparton</span>
+          <span class="town">Kilmore</span>
+          <span class="town">Broadford</span>
+          <span class="town">Murchison</span>
+          <span class="town">Yea</span>
+        </div>
+      </div>
+      <div class="map-wrap reveal reveal-delay-2">
+        <svg class="map-svg" viewBox="0 0 500 430" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M20 0L0 0 0 20" fill="none" stroke="#EDE8DC" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <!-- Background -->
+          <rect width="500" height="430" fill="#FAF8F4"/>
+          <rect width="500" height="430" fill="url(#grid)"/>
+          <!-- Goulburn River -->
+          <path d="M128 0 L138 55 L128 108 L144 155 L128 172 L138 215 L150 260 L155 315 L162 370 L158 430" fill="none" stroke="#B8D4E4" stroke-width="3" stroke-linecap="round" opacity=".65"/>
+          <!-- Hume Freeway -->
+          <path d="M198 0 L208 80 L212 180 L218 280 L222 430" fill="none" stroke="#C8BCA8" stroke-width="3.5" stroke-linecap="round"/>
+          <!-- Midland Highway -->
+          <path d="M10 172 L80 170 L128 172 L212 180 L330 196 L490 210" fill="none" stroke="#C8BCA8" stroke-width="2" stroke-linecap="round"/>
+          <!-- Goulburn Valley Highway NE -->
+          <path d="M212 180 L285 142 L372 112 L470 82" fill="none" stroke="#C8BCA8" stroke-width="2" stroke-linecap="round"/>
+          <!-- Maroondah Highway SE -->
+          <path d="M212 180 L265 245 L305 316 L324 430" fill="none" stroke="#C8BCA8" stroke-width="2" stroke-linecap="round"/>
+          <!-- Back road south -->
+          <path d="M212 180 L195 265 L190 340 L194 430" fill="none" stroke="#D4C9B5" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Road labels -->
+          <text x="230" y="55" fill="#B4A890" font-family="'Roboto',sans-serif" font-size="6.5" letter-spacing="1" transform="rotate(86,230,55)">HUME FWY</text>
+          <text x="52" y="160" fill="#B4A890" font-family="'Roboto',sans-serif" font-size="6" letter-spacing="0.5">MIDLAND HWY</text>
+          <text x="310" y="120" fill="#B4A890" font-family="'Roboto',sans-serif" font-size="6" letter-spacing="0.5" transform="rotate(-14,310,120)">GOULBURN VALLEY HWY</text>
+          <!-- 50km radius circle — Avenel at (212,180), 50km ≈ 110px -->
+          <circle cx="212" cy="180" r="112" fill="rgba(184,134,78,0.06)" stroke="#B8864E" stroke-width="1.8" stroke-dasharray="7 5"/>
+          <!-- Radius label -->
+          <text x="316" y="82" fill="#B8864E" font-family="'Roboto',sans-serif" font-size="7.5" font-weight="500" letter-spacing="1">50KM RADIUS</text>
+          <line x1="314" y1="84" x2="296" y2="96" stroke="#B8864E" stroke-width="0.8" opacity=".6"/>
+          <!-- TOWNS -->
+          <!-- Avenel (home) -->
+          <circle cx="212" cy="180" r="8" fill="#B8864E" stroke="#FAF8F4" stroke-width="2.5"/>
+          <text x="226" y="175" fill="#1C1610" font-family="'Roboto Slab',serif" font-size="9.5" font-weight="700" letter-spacing="0.5">AVENEL</text>
+          <text x="226" y="188" fill="#B8864E" font-family="'Roboto',sans-serif" font-size="7" letter-spacing="0.5">Home base</text>
+          <!-- Seymour -->
+          <circle cx="216" cy="258" r="5" fill="#3A2E1E" stroke="#FAF8F4" stroke-width="2"/>
+          <text x="228" y="263" fill="#3A2E1E" font-family="'Roboto Slab',serif" font-size="8.5" font-weight="700" letter-spacing="0.5">SEYMOUR</text>
+          <!-- Nagambie -->
+          <circle cx="150" cy="172" r="5" fill="#3A2E1E" stroke="#FAF8F4" stroke-width="2"/>
+          <text x="90" y="167" fill="#3A2E1E" font-family="'Roboto Slab',serif" font-size="8.5" font-weight="700" letter-spacing="0.5">NAGAMBIE</text>
+          <!-- Euroa -->
+          <circle cx="296" cy="148" r="4.5" fill="#3A2E1E" stroke="#FAF8F4" stroke-width="2"/>
+          <text x="306" y="152" fill="#3A2E1E" font-family="'Roboto Slab',serif" font-size="8" font-weight="700" letter-spacing="0.5">EUROA</text>
+          <!-- Benalla -->
+          <circle cx="360" cy="114" r="4" fill="#8C7D6A" stroke="#FAF8F4" stroke-width="1.5"/>
+          <text x="368" y="119" fill="#8C7D6A" font-family="'Roboto',sans-serif" font-size="7.5" letter-spacing="0.5">BENALLA</text>
+          <!-- Shepparton -->
+          <circle cx="218" cy="68" r="4" fill="#B4A890" stroke="#FAF8F4" stroke-width="1.5"/>
+          <text x="228" y="73" fill="#B4A890" font-family="'Roboto',sans-serif" font-size="7.5" letter-spacing="0.5">SHEPPARTON</text>
+          <!-- Kilmore -->
+          <circle cx="186" cy="326" r="4" fill="#8C7D6A" stroke="#FAF8F4" stroke-width="1.5"/>
+          <text x="195" y="330" fill="#8C7D6A" font-family="'Roboto',sans-serif" font-size="7.5" letter-spacing="0.5">KILMORE</text>
+          <!-- Broadford -->
+          <circle cx="196" cy="360" r="4" fill="#8C7D6A" stroke="#FAF8F4" stroke-width="1.5"/>
+          <text x="136" y="365" fill="#8C7D6A" font-family="'Roboto',sans-serif" font-size="7.5" letter-spacing="0.5">BROADFORD</text>
+          <!-- Murchison -->
+          <circle cx="116" cy="148" r="3.5" fill="#8C7D6A" stroke="#FAF8F4" stroke-width="1.5"/>
+          <text x="68" y="143" fill="#8C7D6A" font-family="'Roboto',sans-serif" font-size="7" letter-spacing="0.5">MURCHISON</text>
+          <!-- Yea -->
+          <circle cx="270" cy="300" r="4" fill="#8C7D6A" stroke="#FAF8F4" stroke-width="1.5"/>
+          <text x="278" y="305" fill="#8C7D6A" font-family="'Roboto',sans-serif" font-size="7.5" letter-spacing="0.5">YEA</text>
+          <!-- Compass -->
+          <g transform="translate(462,392)">
+            <text x="0" y="-14" fill="#C4B9A8" font-family="'Roboto',sans-serif" font-size="7" text-anchor="middle" font-weight="500">N</text>
+            <line x1="0" y1="-11" x2="0" y2="11" stroke="#C4B9A8" stroke-width=".8"/>
+            <line x1="-11" y1="0" x2="11" y2="0" stroke="#C4B9A8" stroke-width=".8"/>
+            <polygon points="0,-11 3,-4 0,-7 -3,-4" fill="#B8864E"/>
+          </g>
+          <!-- Scale bar -->
+          <line x1="30" y1="412" x2="84" y2="412" stroke="#8C7D6A" stroke-width="1"/>
+          <line x1="30" y1="408" x2="30" y2="416" stroke="#8C7D6A" stroke-width="1"/>
+          <line x1="84" y1="408" x2="84" y2="416" stroke="#8C7D6A" stroke-width="1"/>
+          <text x="57" y="425" fill="#8C7D6A" font-family="'Roboto',sans-serif" font-size="6.5" text-anchor="middle" letter-spacing="0.5">~25 KM</text>
+          <!-- Border -->
+          <rect x="1" y="1" width="498" height="428" fill="none" stroke="#D4C9B5" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <span class="eyebrow">Get in Touch</span>
+        <div class="rule-line"></div>
+        <h2>Book a<br><em>free quote</em></h2>
+        <p>Whether you're a real estate agent with a pre-sale job, a homeowner planning a renovation, or a developer needing a survey — call Shannon directly or fill in the form. He'll get back to you within one business day.</p>
+        <div class="cd-list">
+          <div class="cd-row">
+            <span class="cd-lbl">Phone</span>
+            <span class="cd-val"><a href="tel:0412130740">0412 130 740</a></span>
+          </div>
+          <div class="cd-row">
+            <span class="cd-lbl">Email</span>
+            <span class="cd-val"><a href="/cdn-cgi/l/email-protection#a3cacdc5cce3d0cbccc2d1c6d0c6d1d5cac0c6d08dc0ccce8dc2d6"><span class="__cf_email__" data-cfemail="6e070008012e1d06010f1c0b1d0b1c18070d0b1d400d0103400f1b">[email&#160;protected]</span></a></span>
+          </div>
+          <div class="cd-row">
+            <span class="cd-lbl">Based</span>
+            <span class="cd-val">Avenel, Victoria 3664</span>
+          </div>
+          <div class="cd-row">
+            <span class="cd-lbl">Region</span>
+            <span class="cd-val">Central Victoria — 50km from Avenel</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap reveal reveal-delay-2">
+        <span class="form-eyebrow">Free Quote — No Obligation</span>
+        <h3 class="form-title">Book a Quote</h3>
+        <p class="form-sub">Fill in the form and Shannon will be in touch within one business day — usually the same day.</p>
+
+        <!-- FormSubmit AJAX — per project skill: formsubmit-contact-form.md -->
+        <!-- Recipient: lucabrew@gmail.com -->
+        <!-- NOTE: First submission triggers a confirmation email. Check inbox + spam and click the link. -->
+        <form id="contactForm">
+          <input type="hidden" name="_subject" value="New Quote Request — Shoare Services">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-row">
+            <div class="fg">
+              <label for="f-name">Name *</label>
+              <input type="text" id="f-name" name="Name" required placeholder="Your name">
+            </div>
+            <div class="fg">
+              <label for="f-phone">Phone</label>
+              <input type="tel" id="f-phone" name="Phone" placeholder="Your number">
+            </div>
+          </div>
+          <div class="fg">
+            <label for="f-email">Email *</label>
+            <input type="email" id="f-email" name="_replyto" required placeholder="Your email address">
+          </div>
+          <div class="fg">
+            <label for="f-service">Type of Work</label>
+            <select id="f-service" name="Service">
+              <option value="">Select a service…</option>
+              <option>Pre-Sale Renovation</option>
+              <option>Cabinetry &amp; Joinery</option>
+              <option>Painting &amp; Plastering</option>
+              <option>Flooring &amp; Tiling</option>
+              <option>Decking &amp; Fencing</option>
+              <option>Surveying</option>
+              <option>General Construction</option>
+              <option>Not sure — need advice</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="f-location">Property Location</label>
+            <input type="text" id="f-location" name="Location" placeholder="e.g. Seymour, Nagambie, Avenel…">
+          </div>
+          <div class="fg">
+            <label for="f-message">Tell Us About the Job *</label>
+            <textarea id="f-message" name="Message" required placeholder="Describe the work needed, including any timelines or deadlines. The more detail the better."></textarea>
+          </div>
+          <button type="submit" class="form-btn" id="submitBtn">Send Enquiry</button>
+          <div class="form-msg" id="formMsg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-name">Shoare <span>Services</span></div>
+        <p>Certified builder, licensed surveyor and full-spectrum trades coordinator. Based in Avenel, Central Victoria. Serving real estate agents and homeowners for over 15 years.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Pre-Sale Renovations</a></li>
+          <li><a href="#services">Cabinetry &amp; Joinery</a></li>
+          <li><a href="#services">Painting &amp; Plastering</a></li>
+          <li><a href="#services">Flooring &amp; Tiling</a></li>
+          <li><a href="#services">Decking &amp; Fencing</a></li>
+          <li><a href="#services">Surveying</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0412130740">0412 130 740</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#3e575058517e4d56515f4c5b4d5b4c48575d5b4d105d5153105f4b"><span class="__cf_email__" data-cfemail="8ce5e2eae3ccffe4e3edfee9ffe9fefae5efe9ffa2efe3e1a2edf9">[email&#160;protected]</span></a></li>
+          <li><a href="#about">About Shannon</a></li>
+          <li><a href="#coverage">Service Area</a></li>
+          <li><a href="#contact">Book a Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Shoare Services &nbsp;·&nbsp; Avenel VIC 3664 &nbsp;·&nbsp; ABN: [Add ABN]</span>
+      <span>VBA Registered Builder &nbsp;·&nbsp; Fully Insured</span>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* NAV */
+const nav=document.getElementById('navbar');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60),{passive:true});
+function openMenu(){document.getElementById('mobileMenu').classList.add('open');}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open');}
+
+/* SCROLL REVEAL */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:.09,rootMargin:'0px 0px -24px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* CONTACT FORM — FormSubmit AJAX */
+/* Per formsubmit-contact-form skill: AJAX endpoint, stays on page, replyto set from email field */
+const form=document.getElementById('contactForm');
+const btn=document.getElementById('submitBtn');
+const msg=document.getElementById('formMsg');
+
+form.addEventListener('submit',async function(e){
+  e.preventDefault();
+  const name=document.getElementById('f-name').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const message=document.getElementById('f-message').value.trim();
+  if(!name||!email||!message){showMsg('Please complete all required fields (Name, Email and Message).','error');return;}
+  if(!email.includes('@')){showMsg('Please enter a valid email address.','error');return;}
+  btn.disabled=true;
+  btn.textContent='Sending…';
+  msg.className='form-msg';
+  msg.style.display='none';
+  const data=new FormData(form);
+  try{
+    const res=await fetch('https://formsubmit.co/ajax/lucabrew@gmail.com',{
+      method:'POST',body:data,headers:{'Accept':'application/json'}
+    });
+    if(res.ok){
+      showMsg('✓ Message sent. Shannon will be in touch within one business day.','success');
+      form.reset();
+      btn.textContent='Sent ✓';
+      setTimeout(()=>{btn.disabled=false;btn.textContent='Send Enquiry';},6000);
+    }else{throw new E
